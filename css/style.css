@@ -1,8 +1,8 @@
 @charset "UTF-8";
 
-
+@import url('./slick.css');
+@import url('./slick-theme.css');
 @import url('./animate.min.css');
-
 
 /* reset - #E0002B */
 * {
@@ -39,14 +39,25 @@ img:hover {
 
 #wrap {
     width: 100%;
-    min-width: 1460px;
+}
+
+/* 추가된 스타일 */
+.showBox {
+    opacity: 0;
+    transform: translateY(10%);
+    transition: all .5s ease-in-out;
+}
+
+/* 화면에 나타날 때 적용되는 클래스 */
+.showBox.on {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* =====================
     header
 =======================*/
 #wrap header {
-    min-width: 1460px;
     width: 100%;
     height: 110px;
     /* border-bottom: 1px solid #999; */
@@ -62,7 +73,6 @@ img:hover {
 }
 
 #wrap header .innerHeader {
-    min-width: 1460px;
     width: 95%;
     height: 110px;
     display: flex;
@@ -136,11 +146,11 @@ img:hover {
 #wrap header .innerHeader .nav ul.nav-list>li:hover a::before {
     width: 100%;
 }
-/* 
+
 #wrap header .innerHeader .nav ul.nav-list>li>a:hover,
 #wrap header .innerHeader .nav ul.nav-list>li>a:focus {
     color: #E0002B;
-} */
+}
 
 #wrap header .headerBar {
     width: 100%;
@@ -162,11 +172,15 @@ img:hover {
     margin-top: -3px;
 }
 
-.submenu>li>a { 
-    color: #000;   
+.submenu>li>a {
+    /* line-height: 1.8; */
+    /* font-size: 16px; */
+    color: #000;
+    /* margin: 0 0 15px 0; */
     letter-spacing: -1px;
-    font-family: 'Nanum Gothic';   
-    padding: 6px 0 7px 0; /* 수정 */
+    font-family: 'Nanum Gothic';
+    /* font-weight: 400; */
+    padding: 4px 0 4px 0;
     display: block;
 }
 
@@ -250,7 +264,6 @@ main .btnTop img {
 }
 
 .main_visual {
-    min-width: 1460px;
     width: 100%;
     height: 1080px;
     /* background: url("../images/mainBg.jpg")no-repeat; */
@@ -261,7 +274,6 @@ main .btnTop img {
 }
 
 .swiper {
-    min-width: 1460px;
     width: 100%;
     height: 100%;
 }
@@ -307,7 +319,7 @@ div.swiper-button-next {
 .swiper-pagination.slides-pagenation .swiper-pagination-bullet {
     width: 12px;
     height: 12px;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 .swiper-pagination.slides-pagenation .swiper-pagination-bullet-active {
@@ -344,10 +356,8 @@ div.swiper-button-next {
 
 
 /* 각 section 일괄 스타일 적용 */
-/* 각 section 일괄 스타일 적용 */
 section.products,
 section.career{
-    min-width: 1460px;
     width: 100%;
     height: 1080px;
     padding: 140px 0 170px 0;
@@ -361,7 +371,9 @@ section.products {
 
 
 
-/* 아코디언 */
+/* ========
+아코디언 
+=========== */
 
 .pd_list {
     display: flex;
@@ -387,6 +399,7 @@ section.products .option {
 /* }--optionBackgroun 없으면, defaultBackground 들어오고, 이도 없으면, 다음 색 사용 
 background: var(--optionBackground, var(--defaultBackground, #e6e9ed));
  */
+
 /* active 클래스를 가지지 않은 요소만 선택 */
 section.products .pd_list .option:not(.active) {
     flex-grow: 1;
@@ -418,34 +431,36 @@ section.products .pd_list .option:not(.active) {
     left: 30px;
     bottom: 70px;
     color: #fff;
-    text-shadow: 0 0 3px rgba(0,0,0,0.3);
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
 }
-.option span {
+
+.option span{
     font-size: 15px;
     color: #fff;
     position: absolute;
     bottom: 45px;
     left: 30px;
 }
-
 /* 화살표 */
 .option .wArrow {
     position: absolute;
-    bottom: 30px; right: 30px;
+    bottom: 30px;
+    right: 30px;
     transition: 0.3s;
 }
-.option img.wArrow {
+
+.option .wArrow img {
     width: 60px; height: 60px;
 }
+
 /* 배경 */
 .bg {
-background: linear-gradient(180deg, rgba(217, 217, 217, 0.00) 46.07%, rgba(0, 0, 0, 0.70) 100%); 
-width: 100%; height: 100%;
-position: absolute; 
-left: 0; top: 0; z-index:-1;
+    background: linear-gradient(180deg, rgba(217, 217, 217, 0.00) 46.07%, rgba(0, 0, 0, 0.70) 100%); 
+    width: 100%; height: 100%;
+    position: absolute;
+    left: 0; top: 0;
+    z-index: -1;
 }
-
-
 
 
 /* career */
@@ -630,15 +645,12 @@ section.career .careerInner .redBox .bBox .moreBox {
 /* news room */
 
 section.newsRoom {
-    min-width: 1460px;
-    width: 100%;
     background-color: #ededf1;
     height: 950px;
    padding-top: 140px;
 }
 
 .bbs .inner {
-    min-width: 1460px;
     width: 1460px;
     margin: 0 auto;
     display: flex;
@@ -715,7 +727,10 @@ section.newsRoom {
 .inner_bbs .item>.inner_item {
     padding: 30px;
     position: relative;
-    padding-bottom: 50px;   
+    padding-bottom: 50px;
+    /* height: 100%; */
+     /* border:1px solid red; */
+  
 }
 
 .inner_bbs .inner_item .title {
@@ -764,25 +779,19 @@ section.newsRoom {
     letter-spacing: -1px;
     height: 250px;
 }
+
+
 .bbs .inner .inner_bbs .slick-dots {
     bottom: -60px;
 }
 
 .inner_bbs .slick-dots li button:before {
     color: #999;
-    
-    
 }
 
 .inner_bbs .slick-dots li.slick-active button:before {
     color: #E0002B;
-    
 }
-
-
-
-
-
 
 /* title */
 section h2 {
@@ -819,8 +828,6 @@ section p {
 =======================*/
 
 footer {
-    width: 100%;
-    min-width: 1460px;
     background-color: #27272a;
     font-family: 'Nanum Gothic';
     padding: 70px 0 100px 0;
@@ -831,7 +838,6 @@ footer a {
 }
 
 footer .innerFooter {
-    min-width: 1460px;
     width: 1460px;
     display: flex;
     height: auto;
