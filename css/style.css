@@ -75,6 +75,7 @@ img:hover {
 }
 
 #wrap header .innerHeader {
+    min-width: 1400px;
     width: 95%;
     height: 110px;
     display: flex;
@@ -829,6 +830,7 @@ footer a {
 }
 
 footer .innerFooter {
+    min-width: 1400px;
     width: 1460px;
     display: flex;
     height: auto;
