@@ -39,7 +39,6 @@ img:hover {
 
 #wrap {
     width: 100%;
-    min-width: 1460px;
 }
 
 /* 추가된 스타일 */
@@ -59,7 +58,6 @@ img:hover {
     header
 =======================*/
 #wrap header {
-    min-width: 1460px;
     width: 100%;
     height: 110px;
     /* border-bottom: 1px solid #999; */
@@ -75,7 +73,6 @@ img:hover {
 }
 
 #wrap header .innerHeader {
-    min-width: 1460px;
     width: 95%;
     height: 110px;
     display: flex;
@@ -267,7 +264,6 @@ main .btnTop img {
 }
 
 .main_visual {
-    min-width: 1460px;
     width: 100%;
     height: 1080px;
     /* background: url("../images/mainBg.jpg")no-repeat; */
@@ -278,13 +274,11 @@ main .btnTop img {
 }
 
 .swiper {
-    min-width: 1460px;
     width: 100%;
     height: 100%;
 }
 
 .swiper-slide {
-    min-width: 1460px;
     position: relative;
     font-family: 'Nanum Gothic';
 }
@@ -325,7 +319,7 @@ div.swiper-button-next {
 .swiper-pagination.slides-pagenation .swiper-pagination-bullet {
     width: 12px;
     height: 12px;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(255, 255, 255, 0.8);
 }
 
 .swiper-pagination.slides-pagenation .swiper-pagination-bullet-active {
@@ -364,7 +358,6 @@ div.swiper-button-next {
 /* 각 section 일괄 스타일 적용 */
 section.products,
 section.career{
-    min-width: 1460px;
     width: 100%;
     height: 1080px;
     padding: 140px 0 170px 0;
@@ -652,14 +645,12 @@ section.career .careerInner .redBox .bBox .moreBox {
 /* news room */
 
 section.newsRoom {
-    min-width: 1460px;
     background-color: #ededf1;
     height: 950px;
    padding-top: 140px;
 }
 
 .bbs .inner {
-    min-width: 1460px;
     width: 1460px;
     margin: 0 auto;
     display: flex;
@@ -837,7 +828,6 @@ section p {
 =======================*/
 
 footer {
-    min-width: 1460px;
     background-color: #27272a;
     font-family: 'Nanum Gothic';
     padding: 70px 0 100px 0;
@@ -848,7 +838,6 @@ footer a {
 }
 
 footer .innerFooter {
-    min-width: 1460px;
     width: 1460px;
     display: flex;
     height: auto;
