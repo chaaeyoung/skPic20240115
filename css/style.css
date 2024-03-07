@@ -10,10 +10,16 @@
     padding: 0;
 }
 
-body {
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+    background-color: #ddd;
+  }
+
+/* body {
     min-width: 1400px;
     background-color: #ddd;
-}
+} */
 
 ul,
 li {
